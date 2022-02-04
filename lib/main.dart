@@ -11,6 +11,8 @@ import 'firestore_page.dart';
 import 'chat/chat_login_page.dart';
 import 'todo/todo_list_page.dart';
 import 'ui/admin_mobile/admin_mobile_page.dart';
+import 'ui/animation/animation.dart';
+import 'ui/animation/transition.dart';
 import 'ui/flight_booking/flight_booking_page.dart';
 import 'ui/sign_up_in/welcome_page.dart';
 import 'ui/battery_optimizer/battery_optimizer_page.dart';
@@ -192,6 +194,26 @@ class MenuSelector extends StatelessWidget {
                     backgroundColor: Colors.blueGrey,
                     text: 'Flight Booking',
                     onPressed: () => _pushPage(context, const FlightBookingPage()),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(16),
+                  alignment: Alignment.center,
+                  child: SignInButtonBuilder(
+                    icon: Icons.animation,
+                    backgroundColor: Colors.blueGrey,
+                    text: 'Animation',
+                    onPressed: () => _pushPage(context, const AnimationWidget()),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(16),
+                  alignment: Alignment.center,
+                  child: SignInButtonBuilder(
+                    icon: Icons.transform_outlined,
+                    backgroundColor: Colors.blueGrey,
+                    text: 'Transition',
+                    onPressed: () => _pushPage(context, const TransitionWidget()),
                   ),
                 ),
               ],
