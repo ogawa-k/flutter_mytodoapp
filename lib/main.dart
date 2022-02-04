@@ -84,114 +84,120 @@ class MenuSelector extends StatelessWidget {
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Container(
-            padding: const EdgeInsets.only(top: 16, left: 16),
-            child: const Text('Firebase Authentication'),
-          ),
-          Container(
-            padding: const EdgeInsets.all(16),
-            alignment: Alignment.center,
-            child: SignInButtonBuilder(
-              icon: Icons.person_add,
-              backgroundColor: Colors.indigo,
-              text: 'ユーザー登録テスト',
-              onPressed: () => _pushPage(context, const RegisterPage()),
+        children: [
+          Expanded(
+            child: ListView(
+              children: [
+                Container(
+                  padding: const EdgeInsets.only(top: 16, left: 16),
+                  child: const Text('Firebase Authentication'),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(16),
+                  alignment: Alignment.center,
+                  child: SignInButtonBuilder(
+                    icon: Icons.person_add,
+                    backgroundColor: Colors.indigo,
+                    text: 'ユーザー登録テスト',
+                    onPressed: () => _pushPage(context, const RegisterPage()),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(16),
+                  alignment: Alignment.center,
+                  child: SignInButtonBuilder(
+                    icon: Icons.verified_user,
+                    backgroundColor: Colors.orange,
+                    text: 'ログインテスト',
+                    onPressed: () => _pushPage(context, const SignInPage()),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.only(top: 16, left: 16),
+                  child: const Text('Firebase Cloud Firestore'),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(16),
+                  alignment: Alignment.center,
+                  child: SignInButtonBuilder(
+                    icon: Icons.collections_rounded,
+                    backgroundColor: Colors.blue,
+                    text: 'CRUDテスト',
+                    onPressed: () => _pushPage(context, const MyFirestorePage()),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.only(top: 16, left: 16),
+                  child: const Text('サンプルアプリ'),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(16),
+                  alignment: Alignment.center,
+                  child: SignInButtonBuilder(
+                    icon: Icons.question_answer,
+                    backgroundColor: Colors.blueGrey,
+                    text: 'チャット',
+                    onPressed: () => _pushPage(context, const ChatLoginPage()),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(16),
+                  alignment: Alignment.center,
+                  child: SignInButtonBuilder(
+                    icon: Icons.list_alt_rounded,
+                    backgroundColor: Colors.blue,
+                    text: 'Todoリスト',
+                    onPressed: () => _pushPage(context, const ToDoListPage()),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.only(top: 16, left: 16),
+                  child: const Text('UIサンプル'),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(16),
+                  alignment: Alignment.center,
+                  child: SignInButtonBuilder(
+                    icon: Icons.design_services,
+                    backgroundColor: Colors.blueGrey,
+                    text: 'Admin Mobile',
+                    onPressed: () => _pushPage(context, const AdminMobilePage()),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(16),
+                  alignment: Alignment.center,
+                  child: SignInButtonBuilder(
+                    icon: Icons.login,
+                    backgroundColor: Colors.blueGrey,
+                    text: 'Sign In / Sign Up',
+                    onPressed: () => _pushPage(context, const WelcomePage()),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(16),
+                  alignment: Alignment.center,
+                  child: SignInButtonBuilder(
+                    icon: Icons.battery_alert,
+                    backgroundColor: Colors.blueGrey,
+                    text: 'Battery Optimizer',
+                    onPressed: () => _pushPage(context, const BatteryOptimizerPage()),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(16),
+                  alignment: Alignment.center,
+                  child: SignInButtonBuilder(
+                    icon: Icons.flight,
+                    backgroundColor: Colors.blueGrey,
+                    text: 'Flight Booking',
+                    onPressed: () => _pushPage(context, const FlightBookingPage()),
+                  ),
+                ),
+              ],
             ),
           ),
-          Container(
-            padding: const EdgeInsets.all(16),
-            alignment: Alignment.center,
-            child: SignInButtonBuilder(
-              icon: Icons.verified_user,
-              backgroundColor: Colors.orange,
-              text: 'ログインテスト',
-              onPressed: () => _pushPage(context, const SignInPage()),
-            ),
-          ),
-          Container(
-            padding: const EdgeInsets.only(top: 16, left: 16),
-            child: const Text('Firebase Cloud Firestore'),
-          ),
-          Container(
-            padding: const EdgeInsets.all(16),
-            alignment: Alignment.center,
-            child: SignInButtonBuilder(
-              icon: Icons.collections_rounded,
-              backgroundColor: Colors.blue,
-              text: 'CRUDテスト',
-              onPressed: () => _pushPage(context, const MyFirestorePage()),
-            ),
-          ),
-          Container(
-            padding: const EdgeInsets.only(top: 16, left: 16),
-            child: const Text('サンプルアプリ'),
-          ),
-          Container(
-            padding: const EdgeInsets.all(16),
-            alignment: Alignment.center,
-            child: SignInButtonBuilder(
-              icon: Icons.question_answer,
-              backgroundColor: Colors.blueGrey,
-              text: 'チャット',
-              onPressed: () => _pushPage(context, const ChatLoginPage()),
-            ),
-          ),
-          Container(
-            padding: const EdgeInsets.all(16),
-            alignment: Alignment.center,
-            child: SignInButtonBuilder(
-              icon: Icons.list_alt_rounded,
-              backgroundColor: Colors.blue,
-              text: 'Todoリスト',
-              onPressed: () => _pushPage(context, const ToDoListPage()),
-            ),
-          ),
-          Container(
-            padding: const EdgeInsets.only(top: 16, left: 16),
-            child: const Text('UIサンプル'),
-          ),
-          Container(
-            padding: const EdgeInsets.all(16),
-            alignment: Alignment.center,
-            child: SignInButtonBuilder(
-              icon: Icons.design_services,
-              backgroundColor: Colors.blueGrey,
-              text: 'Admin Mobile',
-              onPressed: () => _pushPage(context, const AdminMobilePage()),
-            ),
-          ),
-          Container(
-            padding: const EdgeInsets.all(16),
-            alignment: Alignment.center,
-            child: SignInButtonBuilder(
-              icon: Icons.login,
-              backgroundColor: Colors.blueGrey,
-              text: 'Sign In / Sign Up',
-              onPressed: () => _pushPage(context, const WelcomePage()),
-            ),
-          ),
-          Container(
-            padding: const EdgeInsets.all(16),
-            alignment: Alignment.center,
-            child: SignInButtonBuilder(
-              icon: Icons.battery_alert,
-              backgroundColor: Colors.blueGrey,
-              text: 'Battery Optimizer',
-              onPressed: () => _pushPage(context, const BatteryOptimizerPage()),
-            ),
-          ),
-          Container(
-            padding: const EdgeInsets.all(16),
-            alignment: Alignment.center,
-            child: SignInButtonBuilder(
-              icon: Icons.flight,
-              backgroundColor: Colors.blueGrey,
-              text: 'Flight Booking',
-              onPressed: () => _pushPage(context, const FlightBookingPage()),
-            ),
-          ),
-        ],
+        ]
       ),
     );
   }
