@@ -52,50 +52,71 @@ class _ToDoListPageState extends State<ToDoListPage> {
                 if (snapshot.hasData) {
                   final List<DocumentSnapshot> documents =
                     snapshot.data!.docs;
-                  return ListView(
-                    children: documents.map((document) {
-                      Icon _leadingIcon;
-                      switch (document['priority']) {
-                        case 100:
-                          _leadingIcon = const Icon(Icons.low_priority);
-                          break;
-                        case 500:
-                          _leadingIcon = const Icon(Icons.remove);
-                          break;
-                        case 900:
-                          _leadingIcon = const Icon(Icons.priority_high);
-                          break;
-                        default:
-                          _leadingIcon = const Icon(Icons.more_vert);
-                      }
-                      return InkWell(
-                        onTap: () async {
-                          toDo.setTodo(document.id, document['text'], document['priority']);
-                          await Navigator.of(context).push(
-                            MaterialPageRoute(builder: (context) {
-                              return const ToDoAddPage();
-                            }),
-                          );
-                        },
-                        child: Card(
-                          child: ListTile(
-                            tileColor: Colors.orange[document['priority']],
-                            leading: _leadingIcon,
-                            title: Text(document['text']),
-                            subtitle: Text(document['created_at']),
-                            trailing: IconButton(
-                              icon: const Icon(Icons.delete_rounded),
-                              onPressed: () async {
-                                await FirebaseFirestore.instance
-                                  .collection('todos')
-                                  .doc(document.id)
-                                  .delete();
-                              },
-                            ),
+                  return Container(
+                    padding: const EdgeInsets.only(top: 48),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Expanded(
+                          child: ListView(
+                            children: documents.map((document) {
+                              Icon _leadingIcon;
+                              switch (document['priority']) {
+                                case 100:
+                                  _leadingIcon = const Icon(Icons.low_priority);
+                                  break;
+                                case 500:
+                                  _leadingIcon = const Icon(Icons.remove);
+                                  break;
+                                case 900:
+                                  _leadingIcon = const Icon(Icons.priority_high);
+                                  break;
+                                default:
+                                  _leadingIcon = const Icon(Icons.more_vert);
+                              }
+                              return InkWell(
+                                onTap: () async {
+                                  toDo.setTodo(document.id, document['text'], document['priority']);
+                                  await Navigator.of(context).push(
+                                    MaterialPageRoute(builder: (context) {
+                                      return const ToDoAddPage();
+                                    }),
+                                  );
+                                },
+                                child: Container(
+                                  margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                                  child: Card(
+                                    elevation: 8,
+                                    shadowColor: Colors.grey,
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(8),
+                                    ),
+                                    child: Column(
+                                      children: [
+                                        ListTile(
+                                          tileColor: Colors.orange[document['priority']],
+                                          leading: _leadingIcon,
+                                          title: Text(document['text']),
+                                          subtitle: Text(document['created_at']),
+                                          trailing: IconButton(
+                                            icon: const Icon(Icons.delete_rounded),
+                                            onPressed: () async {
+                                              await FirebaseFirestore.instance
+                                                .collection('todos')
+                                                .doc(document.id)
+                                                .delete();
+                                            },
+                                          ),
+                                        ),
+                                    ],) 
+                                  ),
+                                ),
+                              );
+                            }).toList(),
                           ),
                         ),
-                      );
-                    }).toList(),
+                      ],
+                    ),
                   );
                 }
                 return const Center(
