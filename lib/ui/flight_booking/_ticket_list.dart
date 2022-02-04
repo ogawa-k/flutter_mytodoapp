@@ -277,19 +277,19 @@ class TicketList extends StatelessWidget {
                 child: Column(
                   children: [
                     _Ticket(
-                      image: Image.network(kSingaporeLogoUrl),
+                      image: Image.asset(kSingaporeLogoUrl),
                     ),
                     const SizedBox(height: 8),
                     _Ticket(
-                      image: Image.network(kQantasLogoUrl),
+                      image: Image.asset(kQantasLogoUrl),
                     ),
                     const SizedBox(height: 8),
                     _Ticket(
-                      image: Image.network(kEmiratesLogoUrl),
+                      image: Image.asset(kEmiratesLogoUrl),
                     ),
                     const SizedBox(height: 8),
                     _Ticket(
-                      image: Image.network(kHainanLogoUrl),
+                      image: Image.asset(kHainanLogoUrl),
                     ),
                   ],
                 ),
