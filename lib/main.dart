@@ -11,6 +11,7 @@ import 'firestore_page.dart';
 import 'chat/chat_login_page.dart';
 import 'todo/todo_list_page.dart';
 import 'ui/admin_mobile/admin_mobile_page.dart';
+import 'ui/flight_booking/flight_booking_page.dart';
 import 'ui/sign_up_in/welcome_page.dart';
 import 'ui/battery_optimizer/battery_optimizer_page.dart';
 
@@ -55,6 +56,7 @@ class MyTodoApp extends StatelessWidget {
           AdminMobilePage.routeName: (context) => const AdminMobilePage(),
           WelcomePage.routeName: (context) => const WelcomePage(),
           BatteryOptimizerPage.routeName: (context) => const BatteryOptimizerPage(),
+          FlightBookingPage.routeName: (context) => const FlightBookingPage(),
         },
         initialRoute: MenuSelector.routeName,
       ),
@@ -177,6 +179,16 @@ class MenuSelector extends StatelessWidget {
               backgroundColor: Colors.blueGrey,
               text: 'Battery Optimizer',
               onPressed: () => _pushPage(context, const BatteryOptimizerPage()),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(16),
+            alignment: Alignment.center,
+            child: SignInButtonBuilder(
+              icon: Icons.flight,
+              backgroundColor: Colors.blueGrey,
+              text: 'Flight Booking',
+              onPressed: () => _pushPage(context, const FlightBookingPage()),
             ),
           ),
         ],
