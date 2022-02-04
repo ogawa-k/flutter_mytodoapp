@@ -3,15 +3,16 @@ import 'package:flutter_signin_button/button_builder.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:provider/provider.dart';
-import './firebase_options.dart';
+import 'firebase_options.dart';
 
-import './auth/register_page.dart';
-import './auth/signin_page.dart';
-import './firestore_page.dart';
-import './chat/chat_login_page.dart';
-import './todo/todo_list_page.dart';
-import './ui/admin_mobile/admin_mobile_page.dart';
-import './ui/sign_up_in/welcome_page.dart';
+import 'auth/register_page.dart';
+import 'auth/signin_page.dart';
+import 'firestore_page.dart';
+import 'chat/chat_login_page.dart';
+import 'todo/todo_list_page.dart';
+import 'ui/admin_mobile/admin_mobile_page.dart';
+import 'ui/sign_up_in/welcome_page.dart';
+import 'ui/battery_optimizer/battery_optimizer_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -53,6 +54,7 @@ class MyTodoApp extends StatelessWidget {
           ToDoListPage.routeName: (context) => const ToDoListPage(),
           AdminMobilePage.routeName: (context) => const AdminMobilePage(),
           WelcomePage.routeName: (context) => const WelcomePage(),
+          BatteryOptimizerPage.routeName: (context) => const BatteryOptimizerPage(),
         },
         initialRoute: MenuSelector.routeName,
       ),
@@ -165,6 +167,16 @@ class MenuSelector extends StatelessWidget {
               backgroundColor: Colors.blueGrey,
               text: 'Sign In / Sign Up',
               onPressed: () => _pushPage(context, const WelcomePage()),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(16),
+            alignment: Alignment.center,
+            child: SignInButtonBuilder(
+              icon: Icons.battery_alert,
+              backgroundColor: Colors.blueGrey,
+              text: 'Battery Optimizer',
+              onPressed: () => _pushPage(context, const BatteryOptimizerPage()),
             ),
           ),
         ],
