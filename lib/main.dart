@@ -10,7 +10,8 @@ import './auth/signin_page.dart';
 import './firestore_page.dart';
 import './chat/chat_login_page.dart';
 import './todo/todo_list_page.dart';
-import 'ui/admin_mobile/admin_mobile_page.dart';
+import './ui/admin_mobile/admin_mobile_page.dart';
+import './ui/sign_up_in/welcome_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -51,6 +52,7 @@ class MyTodoApp extends StatelessWidget {
           ChatLoginPage.routeName: (context) => const ChatLoginPage(),
           ToDoListPage.routeName: (context) => const ToDoListPage(),
           AdminMobilePage.routeName: (context) => const AdminMobilePage(),
+          WelcomePage.routeName: (context) => const WelcomePage(),
         },
         initialRoute: MenuSelector.routeName,
       ),
@@ -153,6 +155,16 @@ class MenuSelector extends StatelessWidget {
               backgroundColor: Colors.blueGrey,
               text: 'Admin Mobile',
               onPressed: () => _pushPage(context, const AdminMobilePage()),
+            ),
+          ),
+          Container(
+            padding: const EdgeInsets.all(16),
+            alignment: Alignment.center,
+            child: SignInButtonBuilder(
+              icon: Icons.login,
+              backgroundColor: Colors.blueGrey,
+              text: 'Sign In / Sign Up',
+              onPressed: () => _pushPage(context, const WelcomePage()),
             ),
           ),
         ],
