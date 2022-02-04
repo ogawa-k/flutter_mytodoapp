@@ -87,7 +87,7 @@ class _FigmaLogo extends StatelessWidget {
         height: size,
         padding: const EdgeInsets.all(8),
         color: Colors.black,
-        child: Image.network(figmaLogoUrl, fit: BoxFit.contain),
+        child: Image.asset(figmaLogoUrl, fit: BoxFit.contain),
       ),
     );
   }

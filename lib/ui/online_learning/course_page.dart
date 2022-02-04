@@ -31,7 +31,7 @@ class _CourseCard extends StatelessWidget {
               color: Colors.grey[100],
               borderRadius: BorderRadius.circular(8),
             ),
-            child: Image.network(
+            child: Image.asset(
               logoUrl,
               fit: BoxFit.contain,
             ),
