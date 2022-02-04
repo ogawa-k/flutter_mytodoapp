@@ -14,6 +14,7 @@ import 'ui/admin_mobile/admin_mobile_page.dart';
 import 'ui/animation/animation.dart';
 import 'ui/animation/transition.dart';
 import 'ui/flight_booking/flight_booking_page.dart';
+import 'ui/online_learning/top_page.dart';
 import 'ui/sign_up_in/welcome_page.dart';
 import 'ui/battery_optimizer/battery_optimizer_page.dart';
 
@@ -214,6 +215,16 @@ class MenuSelector extends StatelessWidget {
                     backgroundColor: Colors.blueGrey,
                     text: 'Transition',
                     onPressed: () => _pushPage(context, const TransitionWidget()),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(16),
+                  alignment: Alignment.center,
+                  child: SignInButtonBuilder(
+                    icon: Icons.school,
+                    backgroundColor: Colors.blueGrey,
+                    text: 'Online Learning',
+                    onPressed: () => _pushPage(context, const OnlineLearningTopPage()),
                   ),
                 ),
               ],
