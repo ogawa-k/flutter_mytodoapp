@@ -41,6 +41,7 @@ dependencies:
   flutter_signin_button: ^2.0.0
   cloud_firestore: ^3.1.7
   provider: ^6.0.2
+  video_player: ^2.2.18
 
   # How to test a Flutter app
   # following page: https://codelabs.developers.google.com/codelabs/flutter-app-testing/#2

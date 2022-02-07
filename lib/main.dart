@@ -9,6 +9,8 @@ import 'auth/register_page.dart';
 import 'auth/signin_page.dart';
 import 'firestore_page.dart';
 import 'chat/chat_login_page.dart';
+import 'media_player/audio_player_page.dart';
+import 'media_player/video_player_page.dart';
 import 'todo/todo_list_page.dart';
 import 'ui/admin_mobile/admin_mobile_page.dart';
 import 'ui/animation/animation.dart';
@@ -151,6 +153,26 @@ class MenuSelector extends StatelessWidget {
                     backgroundColor: Colors.blue,
                     text: 'Todoリスト',
                     onPressed: () => _pushPage(context, const ToDoListPage()),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(16),
+                  alignment: Alignment.center,
+                  child: SignInButtonBuilder(
+                    icon: Icons.movie,
+                    backgroundColor: Colors.blueGrey,
+                    text: 'Video Player',
+                    onPressed: () => _pushPage(context, const VideoPlayerPage()),
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.all(16),
+                  alignment: Alignment.center,
+                  child: SignInButtonBuilder(
+                    icon: Icons.music_video,
+                    backgroundColor: Colors.blueGrey,
+                    text: 'Audio Player',
+                    onPressed: () => _pushPage(context, const AudioPlayerPage()),
                   ),
                 ),
                 Container(
